@@ -1,30 +1,26 @@
 import React from 'react';
-import Facker from 'faker';
+import Faker from 'faker';
 // import GoogleAPI from 'googleapis';
+
+const getDate = () => {
+    return Faker.date.past();
+}
 
 const VideoDetail = () => {
     return (
-        <div className="card">
-            <div className="blurring dimmable image">
-                <div className="ui dimmer">
-                    <div className="content">
-                        <div className="center">
-                            <div className="ui inverted button">Play</div>
-                        </div>
-                    </div>
-                </div>
-                <img alt="video" src={Facker.image.cats()}/>
+        <div class="ui card">
+            <div class="image">
+                <img alt="VideoImage" src={Faker.image.cats()} />
             </div>
-            <div className="content">
-                <a href="/" className="header">Cat</a>
-                <div className="meta">
-                    <span className="date">Yesterday</span>
-                </div>
+            <div class="content">
+                <div class="header">I Love Cats</div>
+                <div class="meta"><span class="date">3 months ago</span></div>
+                <div class="description">Matthew</div>
             </div>
-            <div className="extra content">
+            <div class="extra content">
                 <a>
-                    <i className="users icon"></i>
-                    2 Likes
+                    <i aria-hidden="true" class="user icon"></i>
+                    22k likes
                 </a>
             </div>
         </div>

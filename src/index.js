@@ -1,16 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import VideoDetail from './VideoDetail';
+import Tab from './TabExampleSecondaryPointing';
 
 const App = () => {
-    return (
-        <div className="ui special cards">
-            <VideoDetail />
-            <VideoDetail />
-            <VideoDetail />
-            <VideoDetail />
-            <VideoDetail />
-        </div>
-    );
+    return <Tab/>;
 };
+
 ReactDOM.render(<App />, document.querySelector('#root'));
