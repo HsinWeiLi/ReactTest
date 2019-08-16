@@ -2,6 +2,27 @@ import React from 'react';
 import { Tab } from 'semantic-ui-react';
 import VideoDetail from './VideoDetail';
 
+var url = "https://www.googleapis.com/youtube/v3/playlistItems"
+    +"?part=snippet%2CcontentDetails"
+    +"&playlistId=PLFgquLnL59amN9tYr7o2a60yFUfzQO3sU"
+    +"&key=AIzaSyCt4itveY-wdo-xMKOmwPMoztJubwGdyrg";
+
+fetch(url)
+.then(function(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    // Read the response as json.
+    return response.json();
+})
+.then(function(responseAsJson) {
+    // Do stuff with the JSON
+    console.log(responseAsJson);
+})
+.catch(function(error) {
+    console.log('Looks like there was a problem: \n', error);
+});
+
 const panes = [
     { menuItem: 'Tab 1', render: () =>
     <Tab.Pane attached={false}>

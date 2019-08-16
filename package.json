@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "faker": "^4.1.0",
+    "fetch": "^1.1.0",
     "google-auth-library": "^5.2.0",
     "googleapis": "^42.0.0",
     "react": "^16.9.0",

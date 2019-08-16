@@ -2,24 +2,22 @@ import React from 'react';
 import Faker from 'faker';
 // import GoogleAPI from 'googleapis';
 
-const getDate = () => {
-    return Faker.date.past();
-}
+
 
 const VideoDetail = () => {
     return (
-        <div class="ui card">
-            <div class="image">
+        <div className="ui card">
+            <div className="image">
                 <img alt="VideoImage" src={Faker.image.cats()} />
             </div>
-            <div class="content">
-                <div class="header">I Love Cats</div>
-                <div class="meta"><span class="date">3 months ago</span></div>
-                <div class="description">Matthew</div>
+            <div className="content">
+                <div className="header">I Love Cats</div>
+                <div className="meta"><span className="date">3 months ago</span></div>
+                <div className="description">Matthew</div>
             </div>
-            <div class="extra content">
+            <div className="extra content">
                 <a>
-                    <i aria-hidden="true" class="user icon"></i>
+                    <i aria-hidden="true" className="user icon"></i>
                     22k likes
                 </a>
             </div>
