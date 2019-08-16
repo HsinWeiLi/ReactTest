@@ -7,18 +7,24 @@ var url = "https://www.googleapis.com/youtube/v3/playlistItems"
     +"&playlistId=PLFgquLnL59amN9tYr7o2a60yFUfzQO3sU"
     +"&key=AIzaSyCt4itveY-wdo-xMKOmwPMoztJubwGdyrg";
 
+var item, title, imgUrl;
+
 fetch(url)
-.then(function(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
+.then(
+    function(response) {
+        // do something to response
+        response.json().then(
+            function(data){
+                for (var i = 0; i < data.items.length ; i++){
+                    item = data.items[i];
+                    title = item.snippet.title;
+                    imgUrl = item.snippet.thumbnails.default.url;
+                    console.log(title,imgUrl);
+                }
+            }
+        )
     }
-    // Read the response as json.
-    return response.json();
-})
-.then(function(responseAsJson) {
-    // Do stuff with the JSON
-    console.log(responseAsJson);
-})
+)
 .catch(function(error) {
     console.log('Looks like there was a problem: \n', error);
 });
