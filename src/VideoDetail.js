@@ -4,14 +4,15 @@ import Faker from 'faker';
 
 
 
-const VideoDetail = () => {
+function VideoDetail(props) {
+
     return (
         <div className="ui card">
             <div className="image">
                 <img alt="VideoImage" src={Faker.image.cats()} />
             </div>
             <div className="content">
-                <div className="header">I Love Cats</div>
+                <div className="header">{props.titles}</div>
                 <div className="meta"><span className="date">3 months ago</span></div>
                 <div className="description">Matthew</div>
             </div>
@@ -24,4 +25,14 @@ const VideoDetail = () => {
         </div>
     );
 };
+
+// const VideoDetail = () => {
+//     return (
+//         <div className="ui cards">
+//             <VideoItem/>
+//         </div>
+//     );
+// };
+
+
 export default VideoDetail;

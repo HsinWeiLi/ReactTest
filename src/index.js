@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tab from './TabExampleSecondaryPointing';
-
-const App = () => {
-    return <Tab/>;
-};
+import App from './App';
 
 ReactDOM.render(<App />, document.querySelector('#root'));
