@@ -1,5 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Grid from './Grid';
+import VideoList from './VideoList';
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+const App = () => {
+    return (
+        <div style={{margin: '5px'}}>
+            <VideoList/>
+            <Grid/>
+        </div>
+    );
+}
+ReactDOM.render(<App/>, document.querySelector('#root'));

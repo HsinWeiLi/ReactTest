@@ -1,38 +1,24 @@
 import React from 'react';
-import Faker from 'faker';
-// import GoogleAPI from 'googleapis';
+import './index.css';
 
-
-
-function VideoDetail(props) {
+const VideoDetail = props => {
 
     return (
         <div className="ui card">
             <div className="image">
-                <img alt="VideoImage" src={Faker.image.cats()} />
+                <img alt="VideoImage" src={props.thumbnail} />
             </div>
             <div className="content">
-                <div className="header">{props.titles}</div>
-                <div className="meta"><span className="date">3 months ago</span></div>
-                <div className="description">Matthew</div>
+                <div className="header">{props.title}</div>
             </div>
             <div className="extra content">
                 <a>
-                    <i aria-hidden="true" className="user icon"></i>
-                    22k likes
+                    <i aria-hidden="true" className="clock icon"></i>
+                    {props.publishedAt}
                 </a>
             </div>
         </div>
     );
 };
-
-// const VideoDetail = () => {
-//     return (
-//         <div className="ui cards">
-//             <VideoItem/>
-//         </div>
-//     );
-// };
-
 
 export default VideoDetail;
