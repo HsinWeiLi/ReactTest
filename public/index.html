@@ -7,10 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
   <!-- Semantic UI CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" />
   <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+  
 
   <!-- Google APIs -->
   <script src="https://apis.google.com/js/api.js"></script>
@@ -18,7 +22,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.3.1/umd/react.development.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.3.1/umd/react-dom.development.js"></script>
 
-  <link rel="stylesheet" href="src/index.css"/>
+  <link rel="stylesheet" href="src/index.css" />
 
   <meta name="description" content="Web site created using create-react-app" />
   <link rel="apple-touch-icon" href="logo192.png" />
@@ -36,6 +40,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+
   <title>IJBOX</title>
 </head>
 
@@ -52,7 +57,40 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
+  <script>
+    // function getTrendingVideo(){
+    //   get = $.ajax({
+    //     url: "http://140.116.72.65:8081/getTrendingVideo",
+    //     type: "POST",
+    //     success: function (txt) {
+    //       $(document).ready(function () {	
+    //         console.log(txt)
+    // 	    	for(video of txt.split('\n')){
+    // 				  data = {
+    // 		   			"id": video.split(',')[0],
+    // 		   			"title":video.split(',')[1],
+    // 	       		"thumbnails":video.split(',')[2]
+    // 				  }
+    //           playlist.push(data)
+    // 	    	}	
+    // 		    console.log(playlist)
+    //         // playlist = shuffle(playlist)
+    // 		    // for(var i=1;i<7;i++){
+    // 			  //   document.getElementById("playlist_bar"+i).innerHTML = playlist[i-1]["title"]
+    // 		    // }
+    // 		  });
+    //     },
+    //     error: function () {
+    //     //  alert("ERROR!!!");
+    //     console.log("error")
+    //     }
+    //   }); 
+    // }
+    // $(document).ready(function () {
+    // 	getTrendingVideo()
+    // });
+  </script>
 </body>
+
 
 </html>

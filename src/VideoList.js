@@ -1,7 +1,7 @@
 import React from 'react';
 import VideoDetail from './VideoDetail';
 
-class App extends React.Component {
+class VideoList extends React.Component {
 
     constructor(props) {
         super(props);
@@ -21,7 +21,7 @@ class App extends React.Component {
                 response.json().then(
                     data => {
                         this.setState({isLoading: false, videos: data.items});
-                        console.log(data.items);
+                        // console.log(data.items);
                     }
                 )
             }).catch(function(error) {
@@ -53,4 +53,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default VideoList;
