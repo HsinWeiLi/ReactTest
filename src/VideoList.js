@@ -6,32 +6,52 @@ class VideoList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isLoading: true, videos: [], error: null};
-        this.fetchData = this.fetchData.bind(this);
+        // this.fetchData = this.fetchData.bind(this);
+        this.getTrendingVideo = this.getTrendingVideo.bind(this);
     }
-    
-    fetchData() {
-        const url = "https://www.googleapis.com/youtube/v3/playlistItems"
-            +"?part=snippet%2CcontentDetails"
-            +"&playlistId=PLFgquLnL59amN9tYr7o2a60yFUfzQO3sU"
-            +"&key=AIzaSyCt4itveY-wdo-xMKOmwPMoztJubwGdyrg";
 
-        fetch(url).then(
-            response=> {
-                // do something to response
-                response.json().then(
-                    data => {
-                        this.setState({isLoading: false, videos: data.items});
-                        // console.log(data.items);
-                    }
-                )
-            }).catch(function(error) {
-                console.log('Looks like there was a problem: \n', error);
+    getTrendingVideo() {
+        const url = "http://140.116.72.65:8081/getTrendingVideo";
+        var playlist = [], data="";
+
+        fetch(url, {method: 'POST', mode: "cors"}).then(
+            response => {
+                response.text().then(
+                    text => {
+                        for (let info of text.split('\n')) {
+                            data = {
+                                "id": info.split(',')[0],
+                                "title": info.split(',')[1],
+                                "thumbnail": info.split(',')[2]
+                            }
+                            playlist.push(data);
+                        }
+                        playlist = this.shuffle(playlist);
+                        playlist = playlist.slice(0, 5);
+                        this.setState({isLoading: false, videos: playlist});
+                        console.log(this.state.videos);
+                    });
             }
-        );
+        ).catch(function(error){
+            console.log(error);
+        })
     }
+
+    shuffle (array) {
+        var i, j, temp;
+        for (i = array.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random()*(i+1));
+            temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
     componentDidMount() {
-        this.fetchData();
+        this.getTrendingVideo();
     }
+
     render() {
         const {isLoading, videos, error} = this.state;
         return(
@@ -41,9 +61,10 @@ class VideoList extends React.Component {
                 {!isLoading ? (
                     videos.map(video => 
                         <VideoDetail key={video.id}
-                            title={video.snippet.title}
-                            thumbnail={video.snippet.thumbnails.medium.url}
-                            publishedAt={video.contentDetails.videoPublishedAt}
+                            id={video.id}
+                            title={video.title}
+                            thumbnail={video.thumbnail}
+                            // publishedAt={video.contentDetails.videoPublishedAt}
                         />
                     )
                 ) : (<h3>Loading...</h3>)}

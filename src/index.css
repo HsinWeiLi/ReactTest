@@ -1,13 +1,40 @@
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
 
+/* General */
+body {
+    overflow: hidden;
+}
 
 /* Grid.js */
 .column {
     margin: 0 !important;
 }
 
+/* Grid.js */
+.ui.form textarea {
+    background: #81C7D4 !important;
+    /* border: 1px solid rgba(0, 137, 167, 0.15) !important; */
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif !important;
+    font-weight: 600 !important;
+    width: 90% !important;
+    margin-top: 3em;
+}
+
+/* SearchBar.js */
+.ui.search {
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif !important;
+    display: block !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 20%;
+}
+.ui.input > input {
+    background: #81C7D4 !important;
+}
+
 /* VideoDetail.js */
 .header {
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif !important;
-    font-weight: 200;
 }
