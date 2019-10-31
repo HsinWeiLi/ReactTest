@@ -1,5 +1,5 @@
 import React from 'react';
-import Faker from 'faker';
+// import Faker from 'faker';
 
 const Grid = () => {
 
@@ -8,7 +8,7 @@ const Grid = () => {
             <div className="ui vertically divided grid">
                 <div className="two column row" style={{height: '40vh'}}>
                     <div className="column" style={{height: '40vh'}}>
-                        <img className="ui fluid centered image" alt="QR code" src={Faker.image.cats()} style={{width: 'auto', height: '60%'}}/>
+                        <img className="ui fluid centered image" alt="QR code" src={require('./qrcode.png')} style={{width: 'auto', height: '60%'}}/>
                     </div>
                     <div className="ui column">
                         <form className="ui form">

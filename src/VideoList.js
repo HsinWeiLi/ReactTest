@@ -6,7 +6,6 @@ class VideoList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isLoading: true, videos: [], error: null};
-        // this.fetchData = this.fetchData.bind(this);
         this.getTrendingVideo = this.getTrendingVideo.bind(this);
     }
 
@@ -14,7 +13,7 @@ class VideoList extends React.Component {
         const url = "http://140.116.72.65:8081/getTrendingVideo";
         var playlist = [], data="";
 
-        fetch(url, {method: 'POST', mode: "cors"}).then(
+        fetch(url, {method: 'POST'}).then(
             response => {
                 response.text().then(
                     text => {
@@ -22,7 +21,7 @@ class VideoList extends React.Component {
                             data = {
                                 "id": info.split(',')[0],
                                 "title": info.split(',')[1],
-                                "thumbnail": info.split(',')[2]
+                                "thumbnails": info.split(',')[2]
                             }
                             playlist.push(data);
                         }
@@ -32,9 +31,7 @@ class VideoList extends React.Component {
                         console.log(this.state.videos);
                     });
             }
-        ).catch(function(error){
-            console.log(error);
-        })
+        ).catch(error => console.log(error))
     }
 
     shuffle (array) {
@@ -62,9 +59,8 @@ class VideoList extends React.Component {
                     videos.map(video => 
                         <VideoDetail key={video.id}
                             id={video.id}
+                            thumbnails={video.thumbnails}
                             title={video.title}
-                            thumbnail={video.thumbnail}
-                            // publishedAt={video.contentDetails.videoPublishedAt}
                         />
                     )
                 ) : (<h3>Loading...</h3>)}

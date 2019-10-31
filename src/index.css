@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
 
+/* color set
+    #9298A6, #CCD0D9, #011C40, #012340, #011526
+*/
+
 /* General */
 body {
     overflow: hidden;
+    background: #CCD0D9;
 }
 
 /* Grid.js */
@@ -12,8 +17,8 @@ body {
 
 /* Grid.js */
 .ui.form textarea {
-    background: #81C7D4 !important;
-    /* border: 1px solid rgba(0, 137, 167, 0.15) !important; */
+    background: #9298A6 !important;
+    border: 1px solid rgba(1, 35, 64, 0.15) !important;
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif !important;
     font-weight: 600 !important;
     width: 90% !important;
@@ -31,10 +36,21 @@ body {
     width: 20%;
 }
 .ui.input > input {
-    background: #81C7D4 !important;
+    background: #9298A6 !important;
+    border: 1px solid rgba(1, 35, 64, 0.15) !important;
 }
 
 /* VideoDetail.js */
 .header {
+    color: #011526 !important;
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif !important;
+}
+div.content {
+    background: #CCD0D9 !important;
+    border: 1px solid rgba(1, 35, 64, 0.15) !important;
+}
+
+#playlist_part {
+    display: block;
+    margin: 5px;
 }

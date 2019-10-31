@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Grid from './Grid';
-import VideoList from './VideoList';
-import SearchBar from './SearchBar';
+import {BrowserRouter, Switch} from 'react-router-dom';
+import App from './App';
 
-class App extends React.Component {
 
-    render() {
-        return (
-            <div style={{margin: '5px'}}>
-                <SearchBar style={{margin: '10px'}}/>
-                <VideoList/>
-                <Grid/>
-            </div>
-        );
-    };
+const Index = () => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <App/>
+            </Switch>
+        </BrowserRouter>
+    );
 }
-ReactDOM.render(<App/>, document.querySelector('#root'));
+
+ReactDOM.render(<Index/>, document.querySelector('#root'));

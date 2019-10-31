@@ -7,8 +7,11 @@
     "fetch": "^1.1.0",
     "google-auth-library": "^5.2.0",
     "googleapis": "^42.0.0",
+    "paho-mqtt": "^1.1.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-router": "^5.1.0",
+    "react-router-dom": "^5.1.0",
     "react-scripts": "3.1.0",
     "semantic-ui-react": "^0.87.3"
   },
